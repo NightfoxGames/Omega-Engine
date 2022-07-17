@@ -1,0 +1,7 @@
+D:\Projecten\Omega-Engine\Omega Engine\OmegaEngine\OmegaEngine\bin\Release\OmegaEngine.exe.config
+D:\Projecten\Omega-Engine\Omega Engine\OmegaEngine\OmegaEngine\bin\Release\OmegaEngine.exe
+D:\Projecten\Omega-Engine\Omega Engine\OmegaEngine\OmegaEngine\bin\Release\OmegaEngine.pdb
+D:\Projecten\Omega-Engine\Omega Engine\OmegaEngine\OmegaEngine\obj\Release\OmegaEngine.csprojAssemblyReference.cache
+D:\Projecten\Omega-Engine\Omega Engine\OmegaEngine\OmegaEngine\obj\Release\OmegaEngine.csproj.CoreCompileInputs.cache
+D:\Projecten\Omega-Engine\Omega Engine\OmegaEngine\OmegaEngine\obj\Release\OmegaEngine.exe
+D:\Projecten\Omega-Engine\Omega Engine\OmegaEngine\OmegaEngine\obj\Release\OmegaEngine.pdb
