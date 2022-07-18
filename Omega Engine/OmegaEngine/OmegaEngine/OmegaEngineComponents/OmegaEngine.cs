@@ -23,8 +23,12 @@ namespace OmegaEngine.OmegaEngineComponents
         private Canvas Window = null;
         private Thread GameLoopThread = null;
 
-        private static List<Sprite2D> AllSprites = new List<Sprite2D>();
-        private static List<Shape2D> AllShapes = new List<Shape2D>();
+        public static List<Sprite2D> AllSprites = new List<Sprite2D>();
+        public static List<Shape2D> AllShapes = new List<Shape2D>();
+
+        public Vector2 CamZoom = new Vector2(1,1);
+        public Vector2 CamPosition = Vector2.Zero();
+        public float CamAngle = 0;
 
         public Color BgColor = Color.White;
         public OmegaEngine(Vector2 ScreenSize, string Title)
@@ -36,7 +40,11 @@ namespace OmegaEngine.OmegaEngineComponents
             Window = new Canvas();
             Window.Size = new Size((int)ScreenSize.X, (int)ScreenSize.Y);
             Window.Text = this.Title;
+            Window.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Window.Paint += Renderer;
+            Window.FormClosed += Window_FormClosing;
+            Window.KeyDown += Window_KeyDown;
+            Window.KeyUp += Window_KeyUp;
 
             GameLoopThread = new Thread(GameLoop);
             GameLoopThread.Start();
@@ -44,6 +52,21 @@ namespace OmegaEngine.OmegaEngineComponents
             Application.Run(Window);
         }
 
+        private void Window_FormClosing(object sender, FormClosedEventArgs e)
+        {
+            Exit();
+            GameLoopThread.Abort();
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            GetKeyUp(e);
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            GetKeyDown(e);
+        }
 
         public static void RegisterShape(Shape2D shape)
         {
@@ -89,21 +112,36 @@ namespace OmegaEngine.OmegaEngineComponents
             Graphics g = e.Graphics;
 
             g.Clear(BgColor);
-
-            foreach(Shape2D shape in AllShapes)
+            g.TranslateTransform(CamPosition.X, CamPosition.Y);
+            g.RotateTransform(CamAngle);
+            g.ScaleTransform(CamZoom.X, CamZoom.Y);
+            try
             {
-                g.FillRectangle(new SolidBrush(shape.color), shape.Position.X, shape.Position.Y, shape.Scale.X, shape.Scale.Y);
+                foreach (Shape2D shape in AllShapes)
+                {
+                    g.FillRectangle(new SolidBrush(shape.color), shape.Position.X, shape.Position.Y, shape.Scale.X, shape.Scale.Y);
+                }
+                foreach (Sprite2D sprite in AllSprites)
+                {
+                    if (!sprite.isReference)
+                    {
+                        g.DrawImage(sprite.Sprite, sprite.Position.X, sprite.Position.Y, sprite.Scale.X, sprite.Scale.Y);
+                    }                    
+                }
             }
-            foreach (Sprite2D sprite in AllSprites)
+            catch
             {
-                g.DrawImage(sprite.Sprite, sprite.Position.X, sprite.Position.Y, sprite.Scale.X, sprite.Scale.Y);
+                Debug.WarningLog("Not Loading...");
             }
         }
 
         public abstract void Start();
         public abstract void Draw();
         public abstract void Update();
-    
+        public abstract void Exit();
+        public abstract void GetKeyDown(KeyEventArgs e);
+        public abstract void GetKeyUp(KeyEventArgs e);
+
     }
 
 }

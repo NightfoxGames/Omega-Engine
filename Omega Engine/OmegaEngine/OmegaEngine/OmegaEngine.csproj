@@ -51,6 +51,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OmegaEngineComponents\Shape2D.cs" />
+    <Compile Include="OmegaEngineComponents\Sprite2D.cs" />
     <Compile Include="OmegaEngineComponents\Vector2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
