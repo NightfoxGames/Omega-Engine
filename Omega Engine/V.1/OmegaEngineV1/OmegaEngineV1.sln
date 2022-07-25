@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmegaEngine V.1", "OmegaEngine V.1\OmegaEngine V.1.csproj", "{48238C5F-449E-41CA-8D64-AE1B8956B68B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48238C5F-449E-41CA-8D64-AE1B8956B68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48238C5F-449E-41CA-8D64-AE1B8956B68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48238C5F-449E-41CA-8D64-AE1B8956B68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48238C5F-449E-41CA-8D64-AE1B8956B68B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A27547EF-2C9E-42E7-A2CF-A31276B514C8}
+	EndGlobalSection
+EndGlobal

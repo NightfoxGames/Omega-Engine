@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0leXK5oXGRDpmEzdennQb/dA2+J31DMn/NeZMdRUnZPEzy5PaASXb77YG9F7WLgj24g/BEFKqjZGSLKgN5v5Cg==",
+  "success": true,
+  "projectFilePath": "D:\\Projecten\\Omega-Engine\\Omega Engine\\V.1\\OmegaEngineV1\\OmegaEngine V.1\\OmegaEngine V.1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Seb\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}
